@@ -1,6 +1,6 @@
 """
 
-This example is a list which filters out None values on validation.
+This example is a list which filters out None values prior to validation.
 
 """
 
@@ -18,7 +18,10 @@ def filtered_list_type_validation_wrapper(
         # let pydantic handle it
         return handler(v)
 
-    return handler([i for i in v if i is not None])
+    # remove None types before validation
+    filtered_list = [i for i in v if i is not None]
+
+    return handler(filtered_list)
 
 
 class Child(BaseModel):
