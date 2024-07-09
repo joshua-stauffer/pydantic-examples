@@ -52,7 +52,7 @@ input = {
             "number": 0,
         },
         {"number": 1},
-        None,
+        {"number": "two"},
         {"number": 3},
     ]
 }
