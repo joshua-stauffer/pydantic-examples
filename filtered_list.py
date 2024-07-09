@@ -12,7 +12,7 @@ from pydantic_core.core_schema import ValidatorFunctionWrapHandler, ValidationIn
 
 def filtered_list_type_validation_wrapper(
     v: list, handler: ValidatorFunctionWrapHandler, info: ValidationInfo
-) -> int | None:
+) -> list:
     """Filter None values from a list."""
     if not isinstance(v, list):
         # let pydantic handle it
